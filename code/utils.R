@@ -47,7 +47,7 @@ makechainfig <- function(obj, grepstr=NULL){
 
 
 
-makehists <- function(obj, grepstr=NULL){
+makehists <- function(obj, grepstr=NULL, scalesval="free"){
 
 	obj_draws <- getdraws(obj)
 	obj_summaries <- getsummaries(obj)
@@ -70,7 +70,7 @@ makehists <- function(obj, grepstr=NULL){
 			geom_point(data=obj_summaries, aes(x=lwr, y=0), col="black", shape="[", size=3) + 
 			geom_point(data=obj_summaries, aes(x=upr, y=0), col="black", shape="]", size=3) + 
 			theme_classic() + 
-			facet_wrap(~parameter, ncol=1, scales="free")
+			facet_wrap(~parameter, ncol=1, scales=scalesval)
 
 	return(out)
 
