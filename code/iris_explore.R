@@ -15,3 +15,5 @@ fig_iris_scatter_bystructure <- iris %>%
 		theme_classic() + 
 		scale_color_manual(values=c("setosa"="black","versicolor"="blue","virginica"="red")) + 
 		facet_wrap(~Structure, nrow=3, scales="free")
+
+

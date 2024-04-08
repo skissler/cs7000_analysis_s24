@@ -30,8 +30,10 @@ post_trajectories_basic <- loblolly_basic_draws %>%
 fig_postfit_basic <- loblolly %>% 
 	ggplot(aes(x=Age, y=Height)) + 
 		geom_point() + 
+		geom_smooth(method="lm") + 
 		geom_segment(data=post_trajectories_basic, aes(x=0, y=b0, xend=30, yend=b0+30*b1), col="grey", alpha=0.1) + 
-		theme_classic() 
+		theme_classic() + 
+		theme(text=element_text(size=40))
 
 # =============================================================================
 # Try a parabolic relationship
@@ -71,7 +73,8 @@ fig_postfit_pba <- loblolly %>%
 	ggplot(aes(x=Age, y=Height)) + 
 		geom_point() + 
 		geom_line(data=post_trajectories_pba, aes(x=Age, y=Height, fill=sample), col="grey", alpha=0.1) + 
-		theme_classic() 
+		theme_classic()  + 
+		theme(text=element_text(size=40))
 
 # =============================================================================
 # Try a parabolic relationship with individual effects

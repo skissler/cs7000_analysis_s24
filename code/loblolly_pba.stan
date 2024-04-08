@@ -21,6 +21,10 @@ model {
   height ~ normal(b0 + age*b1 + age2*b2, sigma); // The statistical model 
 }
 
+
+
+
+
 // model {
 
 //   for (i in 1:n){
