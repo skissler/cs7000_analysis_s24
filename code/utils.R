@@ -19,6 +19,15 @@ getdraws <- function(obj){
 	return(out)
 }
 
+getlp <- function(obj){
+	out <- as_tibble(as.data.frame(extract(obj))) %>% 
+		select("lp__") %>% 
+		mutate(sample=1:n()) %>% 
+		pivot_longer(-sample, names_to="parameter") %>% 
+		select(sample, value)
+	return(out)
+}
+
 getsummaries <- function(obj){
 	out <- getdraws(obj) %>% 
 		group_by(parameter) %>% 

@@ -2,6 +2,8 @@
 # Import
 # ==============================================================================
 
+# library(MASS)
+library(mvtnorm)
 library(tidyverse) 
 library(rstan) 
 
@@ -26,7 +28,7 @@ ct_dat <- read_csv("data/ct_dat_sample.csv") %>%
 
 source("code/loblolly_explore.R")
 
-source("code/iris_explore.R")
+# source("code/iris_explore.R")
 
 source("code/ct_dat_explore.R")
 
@@ -36,7 +38,7 @@ source("code/ct_dat_explore.R")
 
 source("code/loblolly_bayes.R")
 
-source("code/iris_bayes.R")
+# source("code/iris_bayes.R")
 
 
 
