@@ -6,6 +6,7 @@
 library(mvtnorm)
 library(tidyverse) 
 library(rstan) 
+options(mc.cores=parallel::detectCores())
 
 source('code/utils.R') 
 
@@ -39,6 +40,8 @@ source("code/ct_dat_explore.R")
 source("code/loblolly_bayes.R")
 
 # source("code/iris_bayes.R")
+
+# source("code/ct_bayes.R")
 
 
 
