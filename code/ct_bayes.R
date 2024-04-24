@@ -30,8 +30,8 @@ ct_fit_overall <- stan(
 ct_fit_overall_chains <- getchains(ct_fit_overall)
 ct_fit_overall_draws <- getdraws(ct_fit_overall)
 
-# temp <- makechainfig(ct_fit_overall, grepstr="tmax\\[5")
-# temp <- makehists(ct_fit_overall, grepstr="clearance_mu")
+# temp <- makechainfig(ct_fit_overall, grepstr="peak_mu")
+# temp <- makehists(ct_fit_overall, grepstr="peak_mu")
 
 postmeans_converted <- ct_fit_overall_draws %>% 
 	filter(grepl("mu",parameter) | grepl("sigma",parameter)) %>% 
@@ -48,7 +48,7 @@ postmeans_converted_summary <- postmeans_converted %>%
 
 
 fig_postmeans_converted <- postmeans_converted %>% 
-	ggplot(aes(x=mean)) + 
+	ggplot(aes(x=value)) + 
 		geom_histogram(aes(y=after_stat(density)), fill="white", col="darkgrey") + 
 		geom_density(adjust=2) + 
 		facet_wrap(~parameter, scales="free", ncol=1) + 
